@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="theme-color" content="#0b5ed7" />
+  <title>Insurae | UAE Insurance Connector</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo-mark">I</div>
+        <div>
+          <h1>Insurae</h1>
+          <p data-i18n="tagline">Compare and connect with UAE insurance providers</p>
+        </div>
+      </div>
+      <select id="languageSelect" class="language-select" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="ar">AR</option>
+        <option value="fa">FA</option>
+      </select>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <span class="badge" data-i18n="badge">UAE Insurance Marketplace</span>
+          <h2 data-i18n="heroTitle">Find the right insurance provider, then buy directly from them.</h2>
+          <p data-i18n="heroText">
+            Insurae does not sell insurance. We connect customers to licensed insurers and track referrals for partner commissions.
+          </p>
+        </div>
+
+        <div class="quick-card">
+          <label data-i18n="chooseType">Choose insurance type</label>
+          <select id="typeFilter">
+            <option value="all" data-i18n="allTypes">All types</option>
+            <option value="health" data-i18n="health">Health Insurance</option>
+            <option value="car" data-i18n="car">Car Insurance</option>
+          </select>
+
+          <label data-i18n="searchProvider">Search provider</label>
+          <input id="searchInput" type="search" placeholder="GIG, Orient, Salama..." />
+
+          <button id="showProvidersBtn" class="primary-btn" data-i18n="showProviders">Show providers</button>
+        </div>
+      </section>
+
+      <section class="trust-strip">
+        <div><strong id="providersCount">0</strong><span data-i18n="providers"> Providers</span></div>
+        <div><strong>5%</strong><span data-i18n="affiliateRate"> affiliate commission ready</span></div>
+        <div><strong data-i18n="directPayment">Direct payment</strong><span data-i18n="toInsurer"> to insurer</span></div>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <h3 data-i18n="providersTitle">Insurance providers</h3>
+          <p data-i18n="providersSubtitle">Customer clicks are tracked before redirecting to the official insurer website.</p>
+        </div>
+        <button id="exportClicksBtn" class="secondary-btn" data-i18n="exportClicks">Export click log</button>
+      </section>
+
+      <section id="providersGrid" class="providers-grid"></section>
+
+      <section class="info-panel">
+        <h3 data-i18n="howTrackingWorks">How commission tracking works</h3>
+        <ol>
+          <li data-i18n="trackStep1">Each partner/affiliate gets a unique referral code.</li>
+          <li data-i18n="trackStep2">Every insurer button includes Insurae UTM parameters and partner code.</li>
+          <li data-i18n="trackStep3">The insurer confirms completed sales using monthly reports, affiliate panel, or API/webhook.</li>
+          <li data-i18n="trackStep4">Insurae calculates 5% commission for approved sales.</li>
+        </ol>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button class="nav-active" data-i18n="home">Home</button>
+      <button data-i18n="compare">Compare</button>
+      <button data-i18n="partners">Partners</button>
+      <button data-i18n="contact">Contact</button>
+    </nav>
+  </div>
+
+  <dialog id="redirectDialog">
+    <h3 data-i18n="leavingTitle">You are leaving Insurae</h3>
+    <p data-i18n="leavingText">You will be redirected to the official insurance provider website. Purchase and payment happen directly there.</p>
+    <div class="dialog-actions">
+      <button id="cancelRedirect" class="secondary-btn" data-i18n="cancel">Cancel</button>
+      <a id="confirmRedirect" class="primary-btn" target="_blank" rel="noopener" data-i18n="continue">Continue</a>
+    </div>
+  </dialog>
+
+  <script src="./app.js"></script>
+</body>
+</html>
