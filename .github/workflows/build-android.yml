@@ -1,4 +1,4 @@
-name: Build Android APK
+Name: Build Android APK
 
 on:
   workflow_dispatch:
@@ -19,13 +19,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # این مرحله بسیار مهم است تا مطمئن شویم پوشه www وجود دارد
+      - name: Ensure www directory exists
+        run: mkdir -p www
+
       - name: Install Capacitor
         run: npm install @capacitor/core @capacitor/cli @capacitor/android
 
       - name: Create Android project
         run: |
-          npx cap add android
-          npx cap sync android
+          # اگر پوشه اندروید قبلاً اضافه شده، نادیده گرفته می‌شود
+          npx cap sync android || (npx cap add android && npx cap sync android)
 
       - name: Build APK
         run: |
