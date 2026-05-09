@@ -1,1 +1,17 @@
-<!doctype html><html><head><meta charset='utf-8'><title>Insurae</title><link rel='stylesheet' href='styles.css'></head><body><h1>Insurae App Ready</h1><script src='app.js'></script></body></html>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Insurae</title><link rel="manifest" href="./manifest.json"><link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header><div class="logo">I</div><div><h1>Insurae</h1><p id="tagline">UAE Insurance Connector</p></div><select id="lang"><option value="en">EN</option><option value="ar">AR</option><option value="fa">FA</option></select></header>
+<main>
+<section class="hero"><span id="badge">UAE Insurance Marketplace</span><h2 id="title">Find insurance providers and buy directly from them.</h2><p id="subtitle">Insurae does not sell insurance. It redirects customers to official insurer websites with referral tracking.</p><select id="type"><option value="all">All</option><option value="health">Health</option><option value="car">Car</option></select><input id="search" placeholder="Search provider"><button onclick="render()">Show providers</button></section>
+<section class="stats"><div><b id="count">0</b><small>Providers</small></div><div><b>5%</b><small>Commission ready</small></div><div><b>Direct</b><small>Payment to insurer</small></div></section>
+<section id="grid"></section>
+<section class="info"><h3 id="trackTitle">How commission tracking works</h3><ol><li>Each partner gets a referral code.</li><li>Each insurer link includes UTM + Insurae referral code.</li><li>The insurer confirms sales via report, panel, API, or webhook.</li><li>Insurae calculates commission for approved sales.</li></ol></section>
+</main>
+<nav><button>Home</button><button>Compare</button><button>Partners</button><button>Contact</button></nav>
+<script src="./app.js"></script>
+</body></html>
